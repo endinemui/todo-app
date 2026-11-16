@@ -143,6 +143,7 @@ function App() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Что нужно сделать?"
+                  maxLength={200}
                   className="w-full pl-9 pr-4 py-3 rounded-xl bg-white dark:bg-zinc-950/80 border border-zinc-300 dark:border-zinc-700/50 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-transparent transition-all"
                 />
               </div>
@@ -309,9 +310,9 @@ function App() {
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <div className={`flex items-baseline gap-2 ${task.completed ? 'line-through text-zinc-400 dark:text-zinc-600' : 'text-zinc-900 dark:text-zinc-100'}`}>
-                          <span className="text-sm font-medium break-words">{task.text}</span>
-                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tighter ${prio?.badge}`}>
+                        <div className={`flex items-start gap-2 ${task.completed ? 'line-through text-zinc-400 dark:text-zinc-600' : 'text-zinc-900 dark:text-zinc-100'}`}>
+                          <span className="text-sm font-medium break-words flex-1 min-w-0">{task.text}</span>
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tighter shrink-0 ${prio?.badge}`}>
                             {prio?.label}
                           </span>
                         </div>
